@@ -25,6 +25,8 @@ public class EnemyScript : MonoBehaviour
         //what ever we want
         healthComponent.onHealthChanged.AddListener(OnHealthChanged);
 
+        healthComponent.onHealthDepleted.AddListener(OnHealthDepleted);
+
         healthScrollBar.size = 1.0f;
     }
 
@@ -39,5 +41,10 @@ public class EnemyScript : MonoBehaviour
     private void OnHealthChanged(int health)
     {
         healthScrollBar.size = Mathf.Clamp01(health / (float)healthComponent.maxHealth);
+    }
+
+    private void OnHealthDepleted()
+    {
+        Destroy(gameObject);
     }
 }

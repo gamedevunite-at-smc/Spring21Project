@@ -5095,7 +5095,7 @@ PrefabInstance:
     - target: {fileID: 2573211543789228422, guid: dc4129c242951e64497523713809475f,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2573211543789228422, guid: dc4129c242951e64497523713809475f,
         type: 3}
@@ -6018,6 +6018,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1847758036}
     m_Modifications:
+    - target: {fileID: 2573211543789228421, guid: dc4129c242951e64497523713809475f,
+        type: 3}
+      propertyPath: _teamEnum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2573211543789228422, guid: dc4129c242951e64497523713809475f,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2573211543789228422, guid: dc4129c242951e64497523713809475f,
+        type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 3.1415927
+      objectReference: {fileID: 0}
+    - target: {fileID: 2573211543789228422, guid: dc4129c242951e64497523713809475f,
+        type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 2573211543789228424, guid: dc4129c242951e64497523713809475f,
         type: 3}
       propertyPath: m_RootOrder
@@ -6264,7 +6284,7 @@ PrefabInstance:
     - target: {fileID: 2573211543789228422, guid: dc4129c242951e64497523713809475f,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2573211543789228422, guid: dc4129c242951e64497523713809475f,
         type: 3}
@@ -6490,7 +6510,7 @@ PrefabInstance:
     - target: {fileID: 2573211543789228422, guid: dc4129c242951e64497523713809475f,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2573211543789228422, guid: dc4129c242951e64497523713809475f,
         type: 3}
@@ -11910,7 +11930,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847758034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.13, y: 0, z: 5}
+  m_LocalPosition: {x: 2.13, y: 0.63, z: 5}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1386954253}
@@ -12577,7 +12597,7 @@ PrefabInstance:
     - target: {fileID: 2573211543789228422, guid: dc4129c242951e64497523713809475f,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2573211543789228422, guid: dc4129c242951e64497523713809475f,
         type: 3}
@@ -12811,6 +12831,12 @@ PrefabInstance:
       propertyPath: _teamEnum
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2573211543789228421, guid: dc4129c242951e64497523713809475f,
+        type: 3}
+      propertyPath: bulletSystemData
+      value: 
+      objectReference: {fileID: 11400000, guid: cef531052bd6ffe4b80b332d12dc7b54,
+        type: 2}
     - target: {fileID: 2573211543789228422, guid: dc4129c242951e64497523713809475f,
         type: 3}
       propertyPath: lengthInSec
@@ -12835,6 +12861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.randomDirectionAmount
       value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2573211543789228422, guid: dc4129c242951e64497523713809475f,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2573211543789228422, guid: dc4129c242951e64497523713809475f,
         type: 3}
