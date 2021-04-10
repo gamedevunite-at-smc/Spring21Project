@@ -69,9 +69,14 @@ public class BulletSystem : MonoBehaviour
         particleSystem.Stop();
     }
 
-#if UNITY_EDITOR
-    private void OnValidate()
+    private void SetData()
     {
+        if (bulletSystemData == null)
+        {
+            Debug.LogError("Bullet System data is not set.", this);
+            return;
+        }
+
         if (particleSystem == null)
             particleSystem = GetComponent<ParticleSystem>();
 
@@ -100,6 +105,13 @@ public class BulletSystem : MonoBehaviour
         }
 
         emissionModule.rateOverTime = bulletSystemData.particlesPerSecond;
+    }
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+
+        SetData();
 
     }
 #endif
