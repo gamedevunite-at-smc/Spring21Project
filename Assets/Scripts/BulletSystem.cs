@@ -44,6 +44,8 @@ public class BulletSystem : MonoBehaviour
         }
     }
 
+    [SerializeField] private BulletSystemData bulletSystemData;
+
     private void Awake()
     {
         particleSystem = GetComponent<ParticleSystem>();
@@ -77,6 +79,8 @@ public class BulletSystem : MonoBehaviour
             transform = GetComponent<Transform>();
 
         var mainModule = particleSystem.main;
+        var emissionModule = particleSystem.emission;
+
         var collisionModule = particleSystem.collision;
 
         switch (_teamEnum)
@@ -94,6 +98,9 @@ public class BulletSystem : MonoBehaviour
             default:
                 break;
         }
+
+        emissionModule.rateOverTime = bulletSystemData.particlesPerSecond;
+
     }
 #endif
 }

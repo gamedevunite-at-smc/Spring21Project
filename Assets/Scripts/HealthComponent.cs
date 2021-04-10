@@ -25,6 +25,9 @@ public class HealthComponent : MonoBehaviour
 
             _maxHealth = value;
 
+            if (onMaxHealthChanged != null)
+                onMaxHealthChanged.Invoke(value);
+
         }
     }
 
@@ -44,13 +47,22 @@ public class HealthComponent : MonoBehaviour
 
             if (onHealthChanged != null)
                 onHealthChanged.Invoke(value);
+
+            if (value < 1 && onHealthDepleted != null)
+                onHealthDepleted.Invoke();
         }
     }
 
     public HealthEvent onHealthChanged = new HealthEvent();
+    public HealthEvent onMaxHealthChanged = new HealthEvent();
+    public UnityEvent onHealthDepleted = new UnityEvent();
 
-    public void SetHealth(int health)
+    public void SetHealthWithoutInvoke(int health)
     {
-
+        _health = health;
+    }
+    public void SetMaxHealthWithoutInvoke(int maxHealth)
+    {
+        _maxHealth = maxHealth;
     }
 }

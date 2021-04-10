@@ -22,36 +22,17 @@ public class PlayerMovement : MonoBehaviour {
         {
             velocity += Vector2.right * speed * Time.deltaTime;
         }
-        else
-        {
-            //velocity += Vector2.right * dragSpeed * Time.deltaTime;
-        }
-
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             velocity += Vector2.left * speed * Time.deltaTime;
         }
-        else
-        {
-            //velocity += Vector2.right * dragSpeed * Time.deltaTime;
-        }
-
         if (Input.GetKey(KeyCode.UpArrow))
         {
             velocity += Vector2.up * speed * Time.deltaTime;
         }
-        else
-        {
-            //velocity += Vector2.up * dragSpeed * Time.deltaTime;
-        }
-
         if (Input.GetKey(KeyCode.DownArrow))
         {
             velocity += Vector2.down * speed * Time.deltaTime;
-        }
-        else
-        {
-            //velocity += Vector2.down * dragSpeed * Time.deltaTime;
         }
 
         rigidbody.velocity = Vector2.Lerp(rigidbody.velocity, Vector2.zero, dragSpeed * Time.deltaTime);
