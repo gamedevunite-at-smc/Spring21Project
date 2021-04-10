@@ -53,7 +53,7 @@ public class BulletSystem : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        //particleSystem.Stop();
+        particleSystem.Stop();
         teamEnum = _teamEnum;
     }
 

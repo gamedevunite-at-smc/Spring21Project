@@ -12,7 +12,6 @@ public class EnemyScript : MonoBehaviour
         spriteColor = GetComponent<SpriteColor>();
     }
 
-    // Start is called before the first frame update
     private void Start()
     {
         //what ever we want

@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     
     [SerializeField] private float speed = 10.0f;
-    
+    [SerializeField] private float maxSpeed = 10.0f;
+    [SerializeField] private float dragSpeed = 30.0f;
+
     private new Rigidbody2D rigidbody;
 
     private BulletSystem bulletSystem;
@@ -14,25 +16,49 @@ public class PlayerMovement : MonoBehaviour {
     void FixedUpdate()
     {
 
+        Vector2 velocity = Vector2.zero;
+
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            rigidbody.position += Vector2.right * speed * Time.deltaTime;
+            velocity += Vector2.right * speed * Time.deltaTime;
         }
+        else
+        {
+            //velocity += Vector2.right * dragSpeed * Time.deltaTime;
+        }
+
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            rigidbody.position += Vector2.left * speed * Time.deltaTime;
+            velocity += Vector2.left * speed * Time.deltaTime;
         }
+        else
+        {
+            //velocity += Vector2.right * dragSpeed * Time.deltaTime;
+        }
+
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            rigidbody.position += Vector2.up * speed * Time.deltaTime;
-            //rigidbod.AddForce(new Vector2(0,2), ForceMode2D.Impulse);
+            velocity += Vector2.up * speed * Time.deltaTime;
         }
+        else
+        {
+            //velocity += Vector2.up * dragSpeed * Time.deltaTime;
+        }
+
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            rigidbody.position += Vector2.down * speed * Time.deltaTime;
+            velocity += Vector2.down * speed * Time.deltaTime;
         }
-        
-        if(Input.GetKeyDown(KeyCode.Space))
+        else
+        {
+            //velocity += Vector2.down * dragSpeed * Time.deltaTime;
+        }
+
+        rigidbody.velocity = Vector2.Lerp(rigidbody.velocity, Vector2.zero, dragSpeed * Time.deltaTime);
+
+        rigidbody.velocity = Vector2.ClampMagnitude(rigidbody.velocity + velocity, maxSpeed);
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             bulletSystem.StartShooting();
         }
@@ -42,8 +68,14 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("Particle hit player");
+    }
+
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();   
+        rigidbody = GetComponent<Rigidbody2D>();
+        bulletSystem = GetComponentInChildren<BulletSystem>();
     }
 }
