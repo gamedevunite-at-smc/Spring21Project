@@ -57,6 +57,10 @@ public class PlayerMovement : MonoBehaviour {
         rigidbody.velocity = Vector2.Lerp(rigidbody.velocity, Vector2.zero, dragSpeed * Time.deltaTime);
 
         rigidbody.velocity = Vector2.ClampMagnitude(rigidbody.velocity + velocity, maxSpeed);
+    }
+
+    private void Update()
+    {
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

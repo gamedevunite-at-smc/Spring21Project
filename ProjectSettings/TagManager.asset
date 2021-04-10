@@ -50,3 +50,6 @@ TagManager:
   - name: Characters and Bullets
     uniqueID: 985563807
     locked: 0
+  - name: UI
+    uniqueID: 1995709861
+    locked: 0
