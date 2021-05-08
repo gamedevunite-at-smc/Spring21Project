@@ -5282,6 +5282,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExplosionParticleSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 5099693991000732234, guid: 4e88586b4908c49479a9e886cd959efc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e88586b4908c49479a9e886cd959efc, type: 3}
 --- !u!4 &246058549 stripped
@@ -13098,6 +13103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ExplosionParticleSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099693991000732234, guid: 4e88586b4908c49479a9e886cd959efc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e88586b4908c49479a9e886cd959efc, type: 3}
