@@ -15,7 +15,12 @@ public class StackModifierObject : MovementModifierObject
     {
         get
         {
-            return new MovementStack(stack);
+            if(stack != null)
+            {
+                return new MovementStack(stack);
+            }
+
+            return null;
         }
     }
 
